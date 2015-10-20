@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-style: solid;
+  border-color: black;
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+}
+
+table.jahresbogen {
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+table.jahresbogen >tbody >tr >td {
+  padding: 1mm;
+}
+
+.jahreszahlen {
+  font-weight: bold;
+  font-size: 120pt;
+  vertical-align: bottom;
+  padding: 20mm;
+  height: 80mm;
+}
+
+.jahreszahlen .jahreszahl1 {
+  text-align: right;
+}
+
+.jahreszahlen .jahreszahl2 {
+  text-align: left;
+  border-left: 1pt black solid;
+}
+
+td.jahrespalte {
+  vertical-align: top;
+}
+
+.motab {
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 3mm;
+}
+
+.motab td {
+  border-width: 0.8pt;
+  height: 13mm;
+  width: 7.5mm;
+  min-width: 7.5mm;
+  max-width: 7.5mm;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.motab .teamiezeile td {
+  height: 7.5mm;
+}
+
+.motab .monatskopf { border-width: 2pt; }
+
+.motab .tageszeile { border-width: 2pt; }
+
+.motab .datumsname {
+  font-size: 15pt;
+  padding: 0.2em;
+  width: 35mm;
+  min-width: 35mm;
+  max-width: 35mm;
+  border-width: 2pt;
+}
+
+.motab .tageszeile .datumsname {
+  text-align: left;
+}
+
+.motab .gruppenname { font-size: 14pt; }
+
+.motab .kopfseparator {
+  border-width: 0;
+  height: 10mm;
+}
+
+.motab .wochenende td {
+  border-width: 0;
+}
+
+.motab .wochenende td.datumsname {
+  border-width: 2pt;
+}
+
+.motab .monatstag {
+  display: inline-block;
+  width: 1.3em;
+  text-align: right;
+}
