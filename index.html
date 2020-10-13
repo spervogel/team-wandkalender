@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang='de'>
+
 <head>
 	<meta charset='utf-8'>
 	<meta name='robots' content='noindex,nofollow'>
 	<title>Kinderhaus Team-Kalender</title>
 
-	<link rel='stylesheet' href='app.css'/>
+	<link rel='stylesheet' href='app.css' />
 
 	<script src='lib/lodash-modern.js'></script>
 	<script src='lib/angular.min.js'></script>
@@ -16,59 +17,63 @@
 
 <body ng-app='app'>
 
-<div ng-controller='blatt'>
+	<div ng-controller='blatt'>
 
-	<table class="jahresbogen">
-		<tbody>
-		<tr class="jahreszahlen">
-			<td>_</td>
-			<td class="jahreszahl1" colspan="4">{{jahr}}</td>
-			<td class="jahreszahl2" colspan="9">{{jahr+1}}</td>
-			<td>_</td>
-		</tr>
+		<table class="jahresbogen">
+			<tbody>
+				<tr class="jahreszahlen">
+					<td>__</td>
+					<td class="jahreszahl1" colspan="4">{{jahr}}</td>
+					<td class="jahreszahl2" colspan="9">{{jahr+1}}</td>
+					<td>__</td>
+				</tr>
 
-		<tr>
-			<td></td>
-			<td class="jahrespalte" ng-repeat='monat in kalender'>
-				<table class="motab">
+				<tr>
+					<td></td>
+					<td class="jahrespalte" ng-repeat='monat in kalender'>
+						<table class="motab">
 
-					<tbody class="monatskopf">
-					<tr>
-						<td rowspan="2" class="datumsname">{{monat.name}}</td>
-						<td colspan="{{gruppe.team.length}}" class="gruppenname" ng-repeat='gruppe in gruppen'>
-							{{gruppe.name}}
-						</td>
-					</tr>
-					<tr class="teamiezeile">
-						<td ng-repeat='teamie in team'>{{teamie}}</td>
-					</tr>
-					</tbody>
+							<tbody class="monatskopf">
+								<tr>
+									<td rowspan="2" class="datumsname">{{monat.name}}</td>
+									<td colspan="{{gruppe.team.length}}" class="gruppenname"
+										ng-repeat='gruppe in gruppen'>
+										{{gruppe.name}}
+									</td>
+								</tr>
+								<tr class="teamiezeile">
+									<td ng-repeat='teamie in team track by $index'>{{teamie}}</td>
+								</tr>
+							</tbody>
 
-					<tbody>
-					<tr>
-						<td colspan="{{team.length}}" class="kopfseparator"></td>
-					</tr>
-					</tbody>
+							<tbody>
+								<tr>
+									<td colspan="{{team.length}}" class="kopfseparator"></td>
+								</tr>
+							</tbody>
 
-					<tbody class="tageszeile" ng-repeat='tag in monat.tage' ng-class='{wochenende:tag.wochenende}'>
-					<tr>
-						<td rowspan="2" class="datumsname">
-							<span class="monatstag">{{tag.nummer}}</span> {{tag.wochentag}}
-						</td>
-						<td colspan="{{gruppe.team.length}}" class="gruppenname" ng-repeat='gruppe in gruppen'></td>
-					</tr>
-					<tr class="teamiezeile">
-						<td ng-repeat='teamie in team'></td>
-					</tr>
-					</tbody>
+							<tbody class="tageszeile" ng-repeat='tag in monat.tage'
+								ng-class='{wochenende:tag.wochenende}'>
+								<tr>
+									<td rowspan="2" class="datumsname">
+										<span class="monatstag">{{tag.nummer}}</span> {{tag.wochentag}}
+									</td>
+									<td colspan="{{gruppe.team.length}}" class="gruppenname"
+										ng-repeat='gruppe in gruppen'></td>
+								</tr>
+								<tr class="teamiezeile">
+									<td ng-repeat='teamie in team track by $index'></td>
+								</tr>
+							</tbody>
 
-				</table>
-			</td>
-			<td></td>
-		</tr>
-	</table>
+						</table>
+					</td>
+					<td></td>
+				</tr>
+		</table>
 
-</div>
+	</div>
 
 </body>
+
 </html>

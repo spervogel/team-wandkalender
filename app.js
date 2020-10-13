@@ -1,50 +1,51 @@
 'use strict';
 
-angular.module ('app', [])
+angular.module('app', [])
 
-.controller ('blatt', function ($scope) {
+	.controller('blatt', function ($scope) {
 
-	// Konfiguration des spezifischen Jahres
-	$scope.jahr = 2016;
-	$scope.gruppen = [
-		{ name:'1J', team:['Ar', 'Le', 'Su'] },
-		{ name:'2J', team:['Ph', 'RK', 'TW'] },
-		{ name:'3J', team:['Ca', 'TF'] },
-		{ name:'Kiga', team:['He', 'In', 'RF', 'Si'] }
-	];
+		// Konfiguration des spezifischen Jahres
+		$scope.jahr = 2020;
+		$scope.gruppen = [
+			{ name: 'S', team: ['  '] },
+			{ name: '1J', team: ['  ', '  '] },
+			{ name: '2J', team: ['  ', '  '] },
+			{ name: '3J', team: ['  ', '  '] },
+			{ name: 'Kiga', team: ['  ', '  ', '  ', '  '] }
+		];
 
-	// Text-Strings
-	var namenMonate = [
-		"Januar", "Februar", "März", "April", "Mai", "Juni",
-		"Juli", "August", "September", "Oktober", "November", "Dezember"
-	];
-	var namenWochentage = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+		// Text-Strings
+		var namenMonate = [
+			"Januar", "Februar", "März", "April", "Mai", "Juni",
+			"Juli", "August", "September", "Oktober", "November", "Dezember"
+		];
+		var namenWochentage = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 
-	// Aufbereitung Team-Daten
-	$scope.team = _.flatten ($scope.gruppen, 'team');
+		// Aufbereitung Team-Daten
+		$scope.team = _.flatten($scope.gruppen, 'team');
 
-	// Aufbereitung Kalender-Daten
-	$scope.kalender = [];
-	// immer 13 Monate von September bis September
-	for (var m = 0; m < 13; ++m) {
-		var monatDate = new Date ($scope.jahr, 8 + m, 1);
-		var monatLaenge = new Date ($scope.jahr, 8 + m + 1, 0).getDate ();
-		var tage = [];
-		for (var t = 1; t < monatLaenge + 1; ++t) {
-			var tagDate = new Date ($scope.jahr, 8 + m, t);
-			var wochentag = tagDate.getDay ();
-			var tag = {
-				nummer:t,
-				wochentag:namenWochentage [wochentag],
-				wochenende: wochentag === 0 || wochentag === 6
+		// Aufbereitung Kalender-Daten
+		$scope.kalender = [];
+		// immer 13 Monate von September bis September
+		for (var m = 0; m < 13; ++m) {
+			var monatDate = new Date($scope.jahr, 8 + m, 1);
+			var monatLaenge = new Date($scope.jahr, 8 + m + 1, 0).getDate();
+			var tage = [];
+			for (var t = 1; t < monatLaenge + 1; ++t) {
+				var tagDate = new Date($scope.jahr, 8 + m, t);
+				var wochentag = tagDate.getDay();
+				var tag = {
+					nummer: t,
+					wochentag: namenWochentage[wochentag],
+					wochenende: wochentag === 0 || wochentag === 6
+				};
+				tage.push(tag);
+			}
+			var monat = {
+				name: namenMonate[monatDate.getMonth()],
+				tage: tage
 			};
-			tage.push (tag);
+			$scope.kalender.push(monat);
 		}
-		var monat = {
-			name:namenMonate [monatDate.getMonth()],
-			tage:tage
-		};
-		$scope.kalender.push (monat);
-	}
 
-});
+	});
