@@ -7,6 +7,7 @@ angular.module('app', [])
 		// Konfiguration des spezifischen Jahres
 		$scope.jahr = 2021;
 		$scope.gruppen = [
+			{ name: 'S', team: ['  ', '  '] },
 			{ name: '1J', team: ['Me', 'Le'] },
 			{ name: '2J', team: ['Mc', 'Ar'] },
 			{ name: '3J', team: ['So', 'In'] },
