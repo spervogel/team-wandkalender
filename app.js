@@ -8,10 +8,10 @@ angular.module('app', [])
 		$scope.jahr = 2021;
 		$scope.gruppen = [
 			{ name: 'S', team: ['  ', '  '] },
-			{ name: '1J', team: ['Me', 'Le'] },
-			{ name: '2J', team: ['Mc', 'Ar'] },
-			{ name: '3J', team: ['So', 'In'] },
-			{ name: 'Kiga', team: ['Si', 'To', 'Ml', '  '] }
+			{ name: '1J', team: ['  ', '  '] },
+			{ name: '2J', team: ['  ', '  '] },
+			{ name: '3J', team: ['  ', '  '] },
+			{ name: 'Kiga', team: ['  ', '  ', '  ', '  '] }
 		];
 
 		// Text-Strings
