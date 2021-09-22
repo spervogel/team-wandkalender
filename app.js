@@ -26,8 +26,8 @@ angular.module('app', [])
 
 		// Aufbereitung Kalender-Daten
 		$scope.kalender = [];
-		// immer 13 Monate von September bis September
-		for (var m = 0; m < 13; ++m) {
+		// immer 14 Monate von September bis Oktober
+		for (var m = 0; m < 14; ++m) {
 			var monatDate = new Date($scope.jahr, 8 + m, 1);
 			var monatLaenge = new Date($scope.jahr, 8 + m + 1, 0).getDate();
 			var tage = [];
