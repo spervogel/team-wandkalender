@@ -5,13 +5,13 @@ angular.module('app', [])
 	.controller('blatt', function ($scope) {
 
 		// Konfiguration des spezifischen Jahres
-		$scope.jahr = 2021;
+		$scope.jahr = 2022;
 		$scope.gruppen = [
-			{ name: 'S', team: ['  ', '  '] },
-			{ name: '1J', team: ['  ', '  '] },
-			{ name: '2J', team: ['  ', '  '] },
-			{ name: '3J', team: ['  ', '  '] },
-			{ name: 'Kiga', team: ['  ', '  ', '  ', '  '] }
+			{ name: 'S', team: ['  '] },
+			{ name: '1J', team: ['In', 'So'] },
+			{ name: '2J', team: ['Me', '  '] },
+			{ name: '3J', team: ['Sn', 'To'] },
+			{ name: 'Kiga', team: ['Sg', 'Mc', 'Le', 'Ml'] }
 		];
 
 		// Text-Strings
