@@ -12,7 +12,7 @@ angular.module('app', [])
 			{ name: '2J', team: ['In', 'So'] },
 			{ name: '3J', team: ['Ph', 'Pi', 'Sn'] },
 			{ name: '  ', team: ['  '] },
-			{ name: 'Kiga', team: ['Ml', 'Mc', 'Li', 'Ya'] }
+			{ name: 'Kiga', team: ['Me', 'Mi', 'Li', 'Ya'] }
 		];
 
 		// Text-Strings
