@@ -51,3 +51,10 @@
         - "General" > "Print to file"
 
 2025 an Michi übergeben
+
+2025-09-09
+
+- Vorbereitung des Kalenders für's neue KiGa Jahr (2025/2026)
+- Anpassung der Variablen $scope.jahr = 2024 zu $scope.jahr = 2025 in der Datei "app.js".
+- Herunterladen aller Dateien und lokales öffnen der "index.html"
+- In Safari Drucken als PDF mit Papierformat 2000mm x 860mm
