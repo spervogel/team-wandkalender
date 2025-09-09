@@ -5,7 +5,7 @@ angular.module('app', [])
 	.controller('blatt', function ($scope) {
 
 		// Konfiguration des spezifischen Jahres
-		$scope.jahr = 2024;
+		$scope.jahr = 2025;
 		$scope.gruppen = [
 			{ name: '  ', team: ['  '] },
 			{ name: '1J', team: ['  ', '  '] },
